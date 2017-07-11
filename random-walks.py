@@ -68,9 +68,12 @@ if __name__ == "__main__":
             print("./random-walks.py [LOWER BOUND] [UPPER BOUND] [LENGTH] [SPEED] [FILE]")
             sys.exit()
 
+        size = int(upper_bound / 20 * length)
+        turtle.screensize(size, size)
         turtle.speed(speed)
         num_turns = lower_bound - 1
         while num_turns < lower_bound:
             turtle.reset()
             num_turns = draw(length, upper_bound, filename)
+        print("\nDRAWING COMPLETED\n")
         turtle.done()
